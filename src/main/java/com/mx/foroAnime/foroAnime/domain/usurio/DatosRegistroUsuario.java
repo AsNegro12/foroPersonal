@@ -1,4 +1,4 @@
-package com.mx.foroAnime.foroAnime.Usurios;
+package com.mx.foroAnime.foroAnime.domain.usurio;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

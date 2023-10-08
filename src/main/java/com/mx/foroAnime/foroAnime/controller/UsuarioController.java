@@ -1,6 +1,6 @@
 package com.mx.foroAnime.foroAnime.controller;
 
-import com.mx.foroAnime.foroAnime.Usurios.*;
+import com.mx.foroAnime.foroAnime.domain.usurio.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

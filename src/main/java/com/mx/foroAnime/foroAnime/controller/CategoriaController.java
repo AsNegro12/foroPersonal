@@ -1,7 +1,7 @@
 package com.mx.foroAnime.foroAnime.controller;
 
 
-import com.mx.foroAnime.foroAnime.categoria.*;
+import com.mx.foroAnime.foroAnime.domain.categoria.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

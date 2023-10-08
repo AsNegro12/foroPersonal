@@ -1,7 +1,7 @@
-package com.mx.foroAnime.foroAnime.publicaciones;
+package com.mx.foroAnime.foroAnime.domain.publicacion;
 
-import com.mx.foroAnime.foroAnime.Usurios.Usuario;
-import com.mx.foroAnime.foroAnime.categoria.Categoria;
+import com.mx.foroAnime.foroAnime.domain.usurio.Usuario;
+import com.mx.foroAnime.foroAnime.domain.categoria.Categoria;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

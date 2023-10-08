@@ -1,6 +1,4 @@
-package com.mx.foroAnime.foroAnime.Usurios;
-
-import com.mx.foroAnime.foroAnime.Usurios.Usuario;
+package com.mx.foroAnime.foroAnime.domain.usurio;
 
 public record DatosListarUsuarios(Integer id, String nombre, String apellido, String email, String usuario_nombre){
     public DatosListarUsuarios(Usuario usuario)

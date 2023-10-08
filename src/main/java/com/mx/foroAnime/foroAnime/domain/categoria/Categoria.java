@@ -1,6 +1,5 @@
-package com.mx.foroAnime.foroAnime.categoria;
+package com.mx.foroAnime.foroAnime.domain.categoria;
 
-import com.mx.foroAnime.foroAnime.controller.DatosActualizarCategoria;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

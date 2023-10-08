@@ -1,4 +1,4 @@
-package com.mx.foroAnime.foroAnime.controller;
+package com.mx.foroAnime.foroAnime.domain.categoria;
 
 import jakarta.validation.constraints.NotNull;
 

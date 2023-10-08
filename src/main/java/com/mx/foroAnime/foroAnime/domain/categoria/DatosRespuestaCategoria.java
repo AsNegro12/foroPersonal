@@ -1,4 +1,4 @@
-package com.mx.foroAnime.foroAnime.categoria;
+package com.mx.foroAnime.foroAnime.domain.categoria;
 
 import java.time.LocalDate;
 
