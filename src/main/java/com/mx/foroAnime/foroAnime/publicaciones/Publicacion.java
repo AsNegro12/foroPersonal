@@ -12,12 +12,12 @@ import java.time.LocalDateTime;
 
 
 @Table(name = "publicaciones")
-@Entity(name = "Publicaiones")
+@Entity(name = "Publicacion")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Publicaiones
+public class Publicacion
 {
     //específicamente en el contexto de frameworks como Java Persistence API (JPA) o Hibernate.
     // Esta anotación se usa para configurar cómo se generan los valores de las claves primarias de

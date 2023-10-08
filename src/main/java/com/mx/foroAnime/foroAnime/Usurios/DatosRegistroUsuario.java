@@ -1,10 +1,10 @@
 package com.mx.foroAnime.foroAnime.Usurios;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
-import java.util.Date;
+import java.sql.Date;
 
 public record DatosRegistroUsuario(
         @NotBlank
@@ -14,7 +14,7 @@ public record DatosRegistroUsuario(
         @NotBlank
         @Email
         String email,
-        @NotBlank
+        @NotNull
         Date fecha_nacimiento,
         @NotBlank
         String usuario_nombre,

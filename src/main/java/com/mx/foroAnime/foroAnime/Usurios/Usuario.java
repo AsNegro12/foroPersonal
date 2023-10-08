@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Table(name = "usuarios")
 @Entity(name = "Usuario")
@@ -28,9 +28,18 @@ public class Usuario
     private String email;
     @Column(name = "fecha_nacimiento")
     private Date fechaNacimiento;
-
     @Column(name = "usuario_nombre")
     private String usuarioNombre;
     @Column(name = "clave")
     private String clave;
+
+    public Usuario(DatosRegistroUsuario datos)
+    {
+        this.nombre = datos.nombre();
+        this.apellido = datos.apellido();
+        this.email = datos.email();
+        this.fechaNacimiento = datos.fecha_nacimiento();
+        this.usuarioNombre = datos.usuario_nombre();
+        this.clave = datos.clave();
+    }
 }
