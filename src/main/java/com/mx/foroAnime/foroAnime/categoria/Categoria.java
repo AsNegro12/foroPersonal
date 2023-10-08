@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 @Table(name = "categorias")
 @Entity(name = "Categoria")
@@ -25,5 +25,12 @@ public class Categoria
     @Column(name = "descripcion")
     private String descripcion;
     @Column(name = "fecha_creacion")
-    private Date fechaCreacion;
+    private LocalDate fechaCreacion;
+
+    public Categoria(DatosRegistrarCategoria datos)
+    {
+        this.titulo = datos.titulo();
+        this.descripcion = datos.descripcion();
+        this.fechaCreacion = LocalDate.now();
+    }
 }
