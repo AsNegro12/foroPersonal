@@ -2,6 +2,7 @@ package com.mx.foroAnime.foroAnime.controller;
 
 
 import com.mx.foroAnime.foroAnime.categoria.*;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -35,7 +36,17 @@ public class CategoriaController
     @GetMapping
     public ResponseEntity<Page<DatosListarCategorias>> listarCategorias(@PageableDefault(size=5) Pageable pageable)
     {
-        return ResponseEntity.ok(categoriaRepository.findAll(pageable).map(DatosListarCategorias:: new));
+        return ResponseEntity.ok(categoriaRepository.findByActivoTrue(pageable).map(DatosListarCategorias:: new));
+    }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity actualizarDatosCategoria(@RequestBody @Valid DatosActualizarCategoria datosActualizarCategoria)
+    {
+        Categoria categoria = categoriaRepository.getReferenceById(datosActualizarCategoria.id());
+        categoria.actualizarDatos(datosActualizarCategoria);
+
+        return ResponseEntity.ok(new DatosRespuestaCategoria(categoria.getTitulo(), categoria.getDescripcion()));
     }
 
     @GetMapping("/{id}")
