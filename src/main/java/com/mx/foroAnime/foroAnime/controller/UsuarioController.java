@@ -52,9 +52,15 @@ public class UsuarioController
 
     @DeleteMapping("/{id}")
     @Transactional
-    public void eliminarUsuario(@PathVariable Integer id)
+    public ResponseEntity eliminarUsuario(@PathVariable Integer id)
     {
-
+        Usuario usuario = usuarioRepository.findById(id).orElse(null);
+        if(usuario == null)
+        {
+            return ResponseEntity.notFound().build();
+        }
+        usuarioRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/{id}")
