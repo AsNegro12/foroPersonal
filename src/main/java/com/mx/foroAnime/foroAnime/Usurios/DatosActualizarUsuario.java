@@ -1,4 +1,4 @@
-package com.mx.foroAnime.foroAnime.controller;
+package com.mx.foroAnime.foroAnime.Usurios;
 
 import jakarta.validation.constraints.NotNull;
 

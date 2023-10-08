@@ -5,5 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/categorias")
-public class CategoriaController{
+public class CategoriaController
+{
 }

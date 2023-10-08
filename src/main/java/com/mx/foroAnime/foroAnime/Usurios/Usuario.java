@@ -1,6 +1,5 @@
 package com.mx.foroAnime.foroAnime.Usurios;
 
-import com.mx.foroAnime.foroAnime.controller.DatosActualizarUsuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
