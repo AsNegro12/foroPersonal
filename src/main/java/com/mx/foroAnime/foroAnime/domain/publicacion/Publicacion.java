@@ -28,17 +28,17 @@ public class Publicacion
 
     private String titulo;
     private String mesaje;
-    private LocalDateTime fechaActual;
+    private LocalDateTime fechaCreacion;
 
     @Enumerated(EnumType.STRING)
     private EstatusPublicacion estatus;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idusuario")
+    @JoinColumn(name = "usuario_id")
     private Usuario usuarios;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idcategoria")
+    @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
 }
