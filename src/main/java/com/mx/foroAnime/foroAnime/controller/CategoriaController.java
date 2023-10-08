@@ -1,12 +1,12 @@
 package com.mx.foroAnime.foroAnime.controller;
 
 
-import com.mx.foroAnime.foroAnime.categoria.Categoria;
-import com.mx.foroAnime.foroAnime.categoria.CategoriaRepository;
-import com.mx.foroAnime.foroAnime.categoria.DatosRegistrarCategoria;
-import com.mx.foroAnime.foroAnime.categoria.DatosRespuestaCategoria;
+import com.mx.foroAnime.foroAnime.categoria.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -32,8 +32,14 @@ public class CategoriaController
         return ResponseEntity.created(url).body(datosRespuestaCategoria);
     }
 
+    @GetMapping
+    public ResponseEntity<Page<DatosListarCategorias>> listarCategorias(@PageableDefault(size=5) Pageable pageable)
+    {
+        return ResponseEntity.ok(categoriaRepository.findAll(pageable).map(DatosListarCategorias:: new));
+    }
+
     @GetMapping("/{id}")
-    public ResponseEntity<DatosRespuestaCategoria> retornarDatosUsuario(@PathVariable Integer id)
+    public ResponseEntity<DatosRespuestaCategoria> retornarDatosCategorias(@PathVariable Integer id)
     {
         Categoria categoria = categoriaRepository.getReferenceById(id);
         var datosRetorno = new DatosRespuestaCategoria(categoria.getTitulo(), categoria.getDescripcion());
