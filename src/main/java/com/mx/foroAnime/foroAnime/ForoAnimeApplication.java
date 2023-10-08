@@ -8,6 +8,6 @@ public class ForoAnimeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ForoAnimeApplication.class, args);
-	}
+	} 
 
 }
