@@ -1,9 +1,9 @@
 package com.mx.foroAnime.foroAnime.categoria;
 
-public record DatosListarCategorias(String titulo, String descripcion)
+public record DatosListarCategorias(Integer id, String titulo, String descripcion)
 {
     public DatosListarCategorias(Categoria categoria)
     {
-        this(categoria.getTitulo(), categoria.getDescripcion());
+        this(categoria.getId(),categoria.getTitulo(), categoria.getDescripcion());
     }
 }

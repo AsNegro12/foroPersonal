@@ -49,6 +49,14 @@ public class CategoriaController
         return ResponseEntity.ok(new DatosRespuestaCategoria(categoria.getTitulo(), categoria.getDescripcion()));
     }
 
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void eliminarCategoria(@PathVariable Integer id)
+    {
+        Categoria categoria = categoriaRepository.getReferenceById(id);
+        categoria.desactivarCategoria();
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<DatosRespuestaCategoria> retornarDatosCategorias(@PathVariable Integer id)
     {

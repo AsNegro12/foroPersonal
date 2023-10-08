@@ -49,4 +49,9 @@ public class Categoria
             this.descripcion = datosActualizarCategoria.descripcion();
         }
     }
+
+    public void desactivarCategoria()
+    {
+        this.activo = false;
+    }
 }
