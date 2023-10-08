@@ -1,5 +1,6 @@
 package com.mx.foroAnime.foroAnime.Usurios;
 
+import com.mx.foroAnime.foroAnime.controller.DatosActualizarUsuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -28,6 +29,7 @@ public class Usuario
     private String email;
     @Column(name = "fecha_nacimiento")
     private Date fechaNacimiento;
+
     @Column(name = "usuario_nombre")
     private String usuarioNombre;
     @Column(name = "clave")
@@ -41,5 +43,17 @@ public class Usuario
         this.fechaNacimiento = datos.fecha_nacimiento();
         this.usuarioNombre = datos.usuario_nombre();
         this.clave = datos.clave();
+    }
+
+    public void actualizarDatos(DatosActualizarUsuario datosActualizarUsuario)
+    {
+        if(datosActualizarUsuario.nombre() != null)
+        {
+            this.nombre = datosActualizarUsuario.nombre();
+        }
+        if(datosActualizarUsuario.apellido() != null)
+        {
+            this.apellido = datosActualizarUsuario.apellido();
+        }
     }
 }

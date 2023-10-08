@@ -1,6 +1,7 @@
 package com.mx.foroAnime.foroAnime.controller;
 
 import com.mx.foroAnime.foroAnime.Usurios.*;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -36,6 +37,24 @@ public class UsuarioController
     public ResponseEntity<Page<DatosListarUsuarios>> listarUsuarios(@PageableDefault(size=5) Pageable pageable)
     {
         return ResponseEntity.ok(usuarioRepository.findAll(pageable).map(DatosListarUsuarios::new));
+    }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity actialuzarDatosUsuario(@RequestBody @Valid DatosActualizarUsuario datosActualizarUsuario)
+    {
+        Usuario usuario = usuarioRepository.getReferenceById(datosActualizarUsuario.id());
+        usuario.actualizarDatos(datosActualizarUsuario);
+        return ResponseEntity.ok(
+                new DatosRespuestaUsuario(usuario.getNombre(), usuario.getApellido(), usuario.getEmail(), usuario.getUsuarioNombre())
+        );
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void eliminarUsuario(@PathVariable Integer id)
+    {
+
     }
 
     @GetMapping("/{id}")
